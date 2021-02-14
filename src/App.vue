@@ -10,8 +10,12 @@
       </div>
     </el-header>
     <el-main>
-      <router-view></router-view>
-      <el-backtop><div style="padding-bottom: 4px; font-size: 16px">▲</div></el-backtop>
+      <el-row>
+        <el-col :span="12" :offset="6">
+          <router-view></router-view>
+        </el-col>
+        <el-backtop><div style="padding-bottom: 4px; font-size: 16px">▲</div></el-backtop>
+      </el-row>
     </el-main>
   </el-container>
   </div>
@@ -23,7 +27,7 @@ export default {
     return {
       titleElement: [
         { name: `${this.$store.state.tiebaName}吧`, path: '/' },
-        { name: 'Wiki', path: '/wiki' },
+        { name: '搜 索', path: '/search' },
         { name: '精 品', path: '/boutique' },
         { name: '个 人', path: '/personal' }
       ],
@@ -32,7 +36,7 @@ export default {
   },
   watch: {
     scrollTop: function(olddata, newdata) {
-      if(this.$route.path != '/') {
+      if(/^\/page\/\d{1,}$/.test(this.$route.path) === true) {
         if (newdata - olddata < 0) {
           this.$refs.bannerBlock.style.transition = 'height .6s'
           this.$refs.bannerBlock.style.height = '100%'
@@ -100,7 +104,7 @@ export default {
     width: 100%;
     height: 0;
     background-color: #fff;
-    padding-left: 500px;
+    padding-left: 27%;
     .block-text {
       padding-top: 12px;
       font-size: 28px;

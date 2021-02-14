@@ -1,32 +1,28 @@
 <template>
   <div>
-    <el-row>
-      <el-col :span="12" :offset="6">
-        <el-table
-        @cell-click="jumpToPage"
-        :data="pageData[pageNumber]"
-        v-loading="loading"
-        stripe
-        style="width: 100%">
-          <el-table-column prop="Reply" label="回复" width="100" align="center"></el-table-column>
-          <el-table-column label="标题" width="580">
-            <template slot-scope="scope"><div class="title-point">{{ scope.row.Title }}</div></template>
-          </el-table-column>
-          <el-table-column prop="Author" label="作者" width="140"></el-table-column>
-          <el-table-column prop="Time" label="回复时间"></el-table-column>
-        </el-table>
-        <div class="pagin">
-          <el-pagination
-          @current-change="handleCurrentEvent"
-          :page-size="100"
-          :pager-count="7"
-          :current-page="pageNumber"
-          layout="prev, pager, next"
-          :total="1000">
-          </el-pagination>
-        </div>
-      </el-col>
-    </el-row>
+    <el-table
+    @cell-click="jumpToPage"
+    :data="pageData[pageNumber]"
+    v-loading="loading"
+    stripe
+    style="width: 100%">
+      <el-table-column prop="Reply" label="回复" width="60%" align="center"></el-table-column>
+      <el-table-column label="标题" width="440%">
+        <template slot-scope="scope"><div class="title-point">{{ scope.row.Title }}</div></template>
+      </el-table-column>
+      <el-table-column prop="Author" label="作者" width="140%"></el-table-column>
+      <el-table-column prop="Time" label="回复时间"></el-table-column>
+    </el-table>
+    <div class="pagin">
+      <el-pagination
+      @current-change="handleCurrentEvent"
+      :page-size="100"
+      :pager-count="7"
+      :current-page="pageNumber"
+      layout="prev, pager, next"
+      :total="1000">
+      </el-pagination>
+    </div>
   </div>
 </template>
 

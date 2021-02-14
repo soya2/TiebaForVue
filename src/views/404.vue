@@ -11,9 +11,7 @@ export default {
 
 <style lang="less" scoped>
 .text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: 40%;
+  text-align: center;
 }
 </style>

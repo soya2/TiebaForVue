@@ -4,13 +4,17 @@ import {
   Button,
   Card,
   Col,
+  Collapse,
+  CollapseItem,
   Container,
   Header,
+  Input,
   Loading,
   Main,
   Message,
   Pagination,
   Row,
+  Slider,
   Table,
   TableColumn
 } from 'element-ui'
@@ -27,5 +31,9 @@ Vue.use(Pagination)
 Vue.use(Card)
 Vue.use(Backtop)
 Vue.use(Loading)
+Vue.use(Slider)
+Vue.use(Input)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
 
 Vue.prototype.$message = Message
